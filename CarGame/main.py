@@ -10,7 +10,7 @@ width = 500
 height = 500
 screen_size = (width, height)
 screen = pygame.display.set_mode(screen_size)
-pygame.display.set_caption("Car game")
+pygame.display.set_caption("Car Game")
 
 # Colors
 gray = (100, 100, 100)
@@ -59,7 +59,7 @@ class Vehicle(pygame.sprite.Sprite):
 class PlayerVehicle(Vehicle):
 
     def __init__(self, x, y):
-        image = pygame.image.load('Cargame/images/car.png').convert_alpha()  # Corrected image path
+        image = pygame.image.load('CarGame/images/car.png').convert_alpha()  # Corrected image path
         super().__init__(image, x, y)
 
 # Create the starting position
@@ -75,21 +75,21 @@ player_group.add(player)
 image_filenames = ['pickup_truck.png', 'semi_trailer.png', 'taxi.png', 'van.png']
 vehicle_images = []
 for image_filename in image_filenames:
-    image = pygame.image.load('Cargame/images/' + image_filename).convert_alpha()
+    image = pygame.image.load('CarGame/images/' + image_filename).convert_alpha()
     vehicle_images.append(image)
 
 # Sprite group for vehicles
 vehicle_group = pygame.sprite.Group()
 
 # Load the crash image
-crash = pygame.image.load('Cargame/images/crash.png').convert_alpha()
+crash = pygame.image.load('CarGame/images/crash.png').convert_alpha()
 crash_rect = crash.get_rect()
 
 # Load sounds
-point_sound = pygame.mixer.Sound('Cargame/point.wav')
+point_sound = pygame.mixer.Sound('CarGame/point.wav')
 point_sound.set_volume(1.0)  # Ensure the volume is set appropriately
 
-crash_sound = pygame.mixer.Sound('Cargame/Crash.wav')
+crash_sound = pygame.mixer.Sound('CarGame/Crash.wav')
 crash_sound.set_volume(1.0)  # Ensure the volume is set appropriately
 
 # Game loop
