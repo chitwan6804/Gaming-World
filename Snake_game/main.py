@@ -16,9 +16,9 @@ screen_height = 600
 border_size = 30  # Size of the border
 gameWindow = pygame.display.set_mode((screen_width, screen_height))
 
-bgimg = pygame.image.load("games/snake.jpg")
-bgimg1 = pygame.image.load("games/first page.webp")
-bgimg2 = pygame.image.load("games/game_over.webp")
+bgimg = pygame.image.load("Snake_game/gallery/pictures/snake.jpg")
+bgimg1 = pygame.image.load("Snake_game/gallery/pictures/first page.webp")
+bgimg2 = pygame.image.load("Snake_game/gallery/pictures/game_over.webp")
 bgimg = pygame.transform.scale(bgimg, (screen_width, screen_height)).convert_alpha()
 bgimg1 = pygame.transform.scale(bgimg1, (screen_width, screen_height)).convert_alpha()
 bgimg2 = pygame.transform.scale(bgimg2, (screen_width, screen_height)).convert_alpha()
@@ -74,7 +74,7 @@ def game_loop():
     snake_list = []
     snake_length = 1
 
-    with open("games/highscore.txt", "r") as f:
+    with open("Snake_game/highscore.txt", "r") as f:
         highscore = f.read()
 
     # Game Loop
@@ -83,7 +83,7 @@ def game_loop():
         if game_over:
             gameWindow.fill(white)
             gameWindow.blit(bgimg2, (0, 0))
-            with open("games/highscore.txt", "w") as f:
+            with open("Snake_game/highscore.txt", "w") as f:
                 f.write(str(highscore))
 
             for event in pygame.event.get():
@@ -115,7 +115,7 @@ def game_loop():
             snake_y += velocity_y
 
             if abs(snake_x - food_x) < 10 and abs(snake_y - food_y) < 10:
-                pygame.mixer.music.load('games/Beep.mp3')
+                pygame.mixer.music.load('Snake_game/gallery/audio/Beep.mp3')
                 pygame.mixer.music.play()
                 score += 10
                 snake_length += 2
@@ -148,13 +148,13 @@ def game_loop():
 
             if head in snake_list[:-1]:
                 game_over = True
-                pygame.mixer.music.load('games/gameover.mp3')
+                pygame.mixer.music.load('Snake_game/gallery/audio/gameover.mp3')
                 pygame.mixer.music.play()
 
             if snake_x < border_size or snake_x > screen_width - border_size - snake_size or \
                snake_y < border_size or snake_y > screen_height - border_size - snake_size:
                 game_over = True
-                pygame.mixer.music.load('games/gameover.mp3')
+                pygame.mixer.music.load('Snake_game/gallery/audio/gameover.mp3')
                 pygame.mixer.music.play()
             
             plot_snake(gameWindow, black, snake_list, snake_size)
