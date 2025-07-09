@@ -6,17 +6,26 @@ Welcome to **Gaming World**, a collection of fun and interactive mini-games buil
 
 ## 🕹️ Included Games
 
-### 1. **Car Racing Game**
-- Navigate a car through traffic while avoiding other vehicles.
-- Features basic movement mechanics and score tracking.
+### 🏎️ 1. Car Racing Game
+- Control your car and dodge traffic.
+- Score increases as you survive longer.
+- Basic collision detection and increasing difficulty.
 
-### 2. **Snake Game**
-- Classic snake game where the player controls the snake to eat food and grow longer.
-- Avoid colliding with the wall or yourself.
+### 🐦 2. Flappy Bird Clone
+- Tap to keep the bird in the air.
+- Navigate through gaps between pipes.
+- Classic Flappy Bird mechanics with gravity and hit detection.
 
-### 3. **Ping Pong Game**
-- Two-player ping pong simulation with bouncing ball physics.
-- First to reach the score limit wins.
+### ❌⭕ 3. Tic Tac Toe
+- Two-player game on the same machine.
+- Simple grid-based game logic.
+- Detects wins, losses, and draws.
+
+### 🐍 4. Snake Game
+- Classic snake that grows as it eats food.
+- Avoid hitting the wall or yourself.
+- Dynamic score display and movement controls.
+
 
 ---
 
@@ -44,9 +53,10 @@ Welcome to **Gaming World**, a collection of fun and interactive mini-games buil
 3. **Run a Game**
 
    ```bash
-   python snake.py         # for Snake Game
-   python car_game.py      # for Car Racing Game
-   python pingpong.py      # for Ping Pong Game
+      python car_game.py         # Car Racing Game
+      python flappy_bird.py      # Flappy Bird Clone
+      python snake.py            # Snake Game
+      python tic_tac_toe.py      # Tic Tac Toe
    ```
 
 
